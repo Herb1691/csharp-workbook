@@ -1,0 +1,11 @@
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.exe
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.deps.json
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.runtimeconfig.json
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.runtimeconfig.dev.json
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.dll
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\bin\Debug\netcoreapp3.0\Project1-ManyMethods.pdb
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\obj\Debug\netcoreapp3.0\Project1-ManyMethods.csprojAssemblyReference.cache
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\obj\Debug\netcoreapp3.0\Project1-ManyMethods.AssemblyInfoInputs.cache
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\obj\Debug\netcoreapp3.0\Project1-ManyMethods.AssemblyInfo.cs
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\obj\Debug\netcoreapp3.0\Project1-ManyMethods.dll
+C:\Users\herwrigh\Documents\LCA\DevFolder\csharp-workbook\Project1-ManyMethods\Project1-ManyMethods\obj\Debug\netcoreapp3.0\Project1-ManyMethods.pdb
