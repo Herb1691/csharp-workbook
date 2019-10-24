@@ -115,6 +115,7 @@ namespace TicTacToe
                             {
                                 done = true;
                                 isValid = true;
+                                break;
                             }
                             else
                             {
@@ -145,6 +146,7 @@ namespace TicTacToe
                             {
                                 done = true;
                                 isValid = true;
+                                break;
                             }
                             else
                             {
@@ -157,7 +159,10 @@ namespace TicTacToe
                         Console.WriteLine("Your move");
 
                     // Take user's input.  Loop user input until correct values are received.
-                    PlaceMark(gameBoard);
+                    if (done != true)
+                    {
+                        PlaceMark(gameBoard);
+                    }
                 }
 
                 if (done == false)
@@ -264,31 +269,34 @@ namespace TicTacToe
                     else
                         Console.WriteLine("Your move");
 
-                    // Computer's turn
-                    Console.WriteLine("Computer's Turn!");
-
-                    bool goodRoll = false;
-
-                    if (whoWon != 0 || whoWon != 1 || whoWon != 3)
+                    if (done != true)
                     {
-                        while (!goodRoll)
+                        // Computer's turn
+                        Console.WriteLine("Computer's Turn!");
+
+                        bool goodRoll = false;
+
+                        if (whoWon != 0 || whoWon != 1 || whoWon != 3)
                         {
-                            Random compRow = new Random();
-                            compTurnR = compRow.Next(0, 3);
-                            Random compCol = new Random();
-                            compTurnC = compCol.Next(0, 3);
-
-                            if (gameBoard[compTurnR, compTurnC] == ' ')
+                            while (!goodRoll)
                             {
-                                gameBoard[compTurnR, compTurnC] = 'O';
-                                goodRoll = true;
+                                Random compRow = new Random();
+                                compTurnR = compRow.Next(0, 3);
+                                Random compCol = new Random();
+                                compTurnC = compCol.Next(0, 3);
+
+                                if (gameBoard[compTurnR, compTurnC] == ' ')
+                                {
+                                    gameBoard[compTurnR, compTurnC] = 'O';
+                                    goodRoll = true;
+                                }
                             }
+                            PrintBoard(gameBoard);
                         }
-                        PrintBoard(gameBoard);
-                    }
-                    else if (done == true)
-                    {
-                        continue;
+                        else if (done == true)
+                        {
+                            continue;
+                        }
                     }
                 }
             } while (!done);
