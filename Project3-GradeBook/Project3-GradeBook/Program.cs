@@ -12,10 +12,7 @@ namespace Project3_GradeBook
         {
             Dictionary<string, string> gradeBook = new Dictionary<string, string>();
             bool done = false;
-            //string[] separateGrades;
             string name = string.Empty;
-            //string grades = string.Empty;
-            //List<int> studentGrades = new List<int>();
 
 
             Console.WriteLine("Welcome to the GradeBook application.");
@@ -26,15 +23,7 @@ namespace Project3_GradeBook
             {
                 string studentGrades = string.Empty;
 
-                //separateGrades = null;
                 bool isDone = false;
-
-                //if (separateGrades == null)
-                //{
-                //    Console.WriteLine("separateGrades is empty.");
-                //}
-                //else
-                //    Console.WriteLine("separateGrades has {0} values.", separateGrades.Count());
 
                 Console.WriteLine("\nPlease enter the first and last name of the student.\n");
                 Console.Write("Or type Exit to quit: ");
@@ -63,12 +52,6 @@ namespace Project3_GradeBook
                     if (studentGrades.Length > 0)
                     {
                         studentGrades = studentGrades.Trim();
-                        //separateGrades = grades.Split(' ');
-
-                        //for (int count = 0; count < separateGrades.Count(); count++)
-                        //{
-                        //    studentGrades.Add(int.Parse(separateGrades[count]));
-                        //}
                     }
                     else
                     {
@@ -92,22 +75,6 @@ namespace Project3_GradeBook
                     else
                     {
                         gradeBook.Add(name, studentGrades);
-
-                        //if (gradeBook.ContainsKey(name))
-                        //{
-                        //    foreach (var key in gradeBook[name])
-                        //    {
-                        //        studentGrades.Add(key);
-                        //    }
-                        //    foreach (var grade in studentGrades)
-                        //    {
-                        //        gradeBook[name].Add(grade);
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    gradeBook.Add(name, studentGrades);
-                        //}
                     }
                 }
                 else
@@ -118,38 +85,12 @@ namespace Project3_GradeBook
                     Console.ReadLine();
                     break;
                 }
-                //Console.WriteLine("separateGrades has {0} values.", separateGrades.Count());
 
                 string printGrades = string.Empty;
-                //Console.WriteLine("The grades for {0} are: {1}", name, gradeBook[name]);
-                //foreach (var grade in gradeBook[name])
-                //{
-                //    Console.Write(grade);
-                //    //printGrades = printGrades + grade + ", ";
-                //}
-
-                //printGrades = printGrades.Trim();
-                //printGrades = printGrades.TrimEnd(',');
-                //Console.Write(printGrades);
                 Console.WriteLine("\n\n");
 
 
-                //foreach (var studentname in gradeBook.Keys)
-                //{
-                //    string printGrades = string.Empty;
-                //    Console.WriteLine("The grades for {0} are: ", studentname);
-                //    foreach (var grade in gradeBook[studentname])
-                //    {
-                //        Console.WriteLine(grade);
-                //        //printGrades = printGrades + grade + ", ";
-                //    }
-                //    printGrades = printGrades.Trim();
-                //    printGrades = printGrades.TrimEnd(',');
-                //    Console.Write(printGrades);
-                //    Console.WriteLine("\n");
-                //}
                 studentGrades = string.Empty;
-                //grades = string.Empty;
             }
         }
 
