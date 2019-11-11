@@ -106,161 +106,171 @@ namespace TowerOfHanoi
                     Console.Write("(A, B, or C): ");
                     moveTo = Console.ReadLine();
 
-                    if (moveTo != moveFrom)
+                    switch (moveTo.ToUpper())
                     {
-                        if (moveTo.ToUpper() == "A")
-                        {
-                            if (pegA.Count == 0)
+                        case "A":
+                        case "B":
+                        case "C":
+                            if (moveTo != moveFrom)
                             {
-                                pegA.Push(movingBlock);
-                            }
-                            else if (pegA.Count >= 1)
-                            {
-                                topBlock = pegA.Peek();
-
-                                if (movingBlock.Length < topBlock.Length)
+                                if (moveTo.ToUpper() == "A")
                                 {
-                                    if (pegA.Count < 3)
+                                    if (pegA.Count == 0)
                                     {
                                         pegA.Push(movingBlock);
                                     }
-                                    else if (pegA.Count == 3)
+                                    else if (pegA.Count >= 1)
                                     {
-                                        pegA.Push(movingBlock);
-                                        hasWon = CheckForWin(pegA);
+                                        topBlock = pegA.Peek();
 
-                                        if (hasWon)
+                                        if (movingBlock.Length < topBlock.Length)
                                         {
-                                            if (startingPos != moveTo.ToUpper())
-                                                startingPos = "A";
-                                            else
+                                            if (pegA.Count < 3)
                                             {
-                                                Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
-                                                hasWon = false;
+                                                pegA.Push(movingBlock);
                                             }
+                                            else if (pegA.Count == 3)
+                                            {
+                                                pegA.Push(movingBlock);
+                                                hasWon = CheckForWin(pegA);
+
+                                                if (hasWon)
+                                                {
+                                                    if (startingPos != moveTo.ToUpper())
+                                                        startingPos = "A";
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
+                                                        hasWon = false;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                                Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
+                                            Console.WriteLine("Please try again.");
+                                            if (moveFrom.ToUpper() == "A")
+                                                pegA.Push(movingBlock);
+                                            else if (moveFrom.ToUpper() == "B")
+                                                pegB.Push(movingBlock);
+                                            else
+                                                pegC.Push(movingBlock);
                                         }
                                     }
-                                    else
-                                        Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
                                 }
-                                else
+                                else if (moveTo.ToUpper() == "B")
                                 {
-                                    Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
-                                    Console.WriteLine("Please try again.");
-                                    if (moveFrom.ToUpper() == "A")
-                                        pegA.Push(movingBlock);
-                                    else if (moveFrom.ToUpper() == "B")
-                                        pegB.Push(movingBlock);
-                                    else
-                                        pegC.Push(movingBlock);
-                                }
-                            }
-                        }
-                        else if (moveTo.ToUpper() == "B")
-                        {
-                            if (pegB.Count == 0)
-                            {
-                                pegB.Push(movingBlock);
-                            }
-                            else if (pegB.Count >= 1)
-                            {
-                                topBlock = pegB.Peek();
-
-                                if (movingBlock.Length < topBlock.Length)
-                                {
-                                    if (pegB.Count < 3)
+                                    if (pegB.Count == 0)
                                     {
                                         pegB.Push(movingBlock);
                                     }
-                                    else if (pegB.Count == 3)
+                                    else if (pegB.Count >= 1)
                                     {
-                                        pegB.Push(movingBlock);
-                                        hasWon = CheckForWin(pegB);
+                                        topBlock = pegB.Peek();
 
-                                        if (hasWon)
+                                        if (movingBlock.Length < topBlock.Length)
                                         {
-                                            if (startingPos != moveTo.ToUpper())
-                                                startingPos = "B";
-                                            else
+                                            if (pegB.Count < 3)
                                             {
-                                                Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
-                                                hasWon = false;
+                                                pegB.Push(movingBlock);
                                             }
+                                            else if (pegB.Count == 3)
+                                            {
+                                                pegB.Push(movingBlock);
+                                                hasWon = CheckForWin(pegB);
+
+                                                if (hasWon)
+                                                {
+                                                    if (startingPos != moveTo.ToUpper())
+                                                        startingPos = "B";
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
+                                                        hasWon = false;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                                Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
+                                            Console.WriteLine("Please try again.");
+                                            if (moveFrom.ToUpper() == "A")
+                                                pegA.Push(movingBlock);
+                                            else if (moveFrom.ToUpper() == "B")
+                                                pegB.Push(movingBlock);
+                                            else
+                                                pegC.Push(movingBlock);
                                         }
                                     }
-                                    else
-                                        Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
                                 }
-                                else
+                                else if (moveTo.ToUpper() == "C")
                                 {
-                                    Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
-                                    Console.WriteLine("Please try again.");
-                                    if (moveFrom.ToUpper() == "A")
-                                        pegA.Push(movingBlock);
-                                    else if (moveFrom.ToUpper() == "B")
-                                        pegB.Push(movingBlock);
-                                    else
-                                        pegC.Push(movingBlock);
-                                }
-                            }
-                        }
-                        else if (moveTo.ToUpper() == "C")
-                        {
-                            if (pegC.Count == 0)
-                            {
-                                pegC.Push(movingBlock);
-                            }
-                            else if (pegC.Count >= 1)
-                            {
-                                topBlock = pegC.Peek();
-
-                                if (movingBlock.Length < topBlock.Length)
-                                {
-                                    if (pegC.Count < 3)
+                                    if (pegC.Count == 0)
                                     {
                                         pegC.Push(movingBlock);
                                     }
-                                    else if (pegC.Count == 3)
+                                    else if (pegC.Count >= 1)
                                     {
-                                        pegC.Push(movingBlock);
-                                        hasWon = CheckForWin(pegC);
+                                        topBlock = pegC.Peek();
 
-                                        if (hasWon)
+                                        if (movingBlock.Length < topBlock.Length)
                                         {
-                                            if (startingPos != moveTo.ToUpper())
-                                                startingPos = "C";
-                                            else
+                                            if (pegC.Count < 3)
                                             {
-                                                Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
-                                                hasWon = false;
+                                                pegC.Push(movingBlock);
                                             }
+                                            else if (pegC.Count == 3)
+                                            {
+                                                pegC.Push(movingBlock);
+                                                hasWon = CheckForWin(pegC);
+
+                                                if (hasWon)
+                                                {
+                                                    if (startingPos != moveTo.ToUpper())
+                                                        startingPos = "C";
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Please try to move the block to a different peg and in the correct order!");
+                                                        hasWon = false;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                                Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
+                                            Console.WriteLine("Please try again.");
+                                            if (moveFrom.ToUpper() == "A")
+                                                pegA.Push(movingBlock);
+                                            else if (moveFrom.ToUpper() == "B")
+                                                pegB.Push(movingBlock);
+                                            else
+                                                pegC.Push(movingBlock);
                                         }
                                     }
-                                    else
-                                        Console.WriteLine("Not sure how it happened, but...ERROR! Peg is full!!");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Larger blocks cannot be placed on smaller blocks!");
-                                    Console.WriteLine("Please try again.");
-                                    if (moveFrom.ToUpper() == "A")
-                                        pegA.Push(movingBlock);
-                                    else if (moveFrom.ToUpper() == "B")
-                                        pegB.Push(movingBlock);
-                                    else
-                                        pegC.Push(movingBlock);
                                 }
                             }
-                        }
-                    }
-                    else
-                    {
-                        if (moveFrom.ToUpper() == "A")
-                            pegA.Push(movingBlock);
-                        else if (moveFrom.ToUpper() == "B")
-                            pegB.Push(movingBlock);
-                        else
-                            pegC.Push(movingBlock);
+                            else
+                            {
+                                if (moveFrom.ToUpper() == "A")
+                                    pegA.Push(movingBlock);
+                                else if (moveFrom.ToUpper() == "B")
+                                    pegB.Push(movingBlock);
+                                else
+                                    pegC.Push(movingBlock);
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Please Choose a Valid Input!");
+                            break;
                     }
                 }
                 else
