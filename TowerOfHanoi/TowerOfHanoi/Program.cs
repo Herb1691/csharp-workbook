@@ -46,7 +46,7 @@ namespace TowerOfHanoi
             Console.WriteLine("highest to lowest.  Sounds easy right?");
             Console.WriteLine("However, you cannot stack larger blocks on top");
             Console.WriteLine("of smaller blocks.  You win by getting the blocks");
-            Console.WriteLine("to a new peg in the Wright order.");
+            Console.WriteLine("to a new peg in the Wright order.\n\n");
 
             while (!isDone)
             {
