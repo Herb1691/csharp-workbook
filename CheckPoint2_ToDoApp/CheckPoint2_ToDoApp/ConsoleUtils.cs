@@ -29,13 +29,14 @@ namespace CheckPoint2_ToDoApp
         // Class To Print ToDo Items - Receives a List from App Class
         public void PrintItems(List<ToDoItem> toDoItems)
         {
-            Console.WriteLine("ID        Description        Status  ");
+            Console.WriteLine("\nID        Description        Status  ");
             Console.WriteLine("=====================================");
 
             foreach (ToDoItem item in toDoItems)
             {
                 Console.WriteLine("{0}  {1}        {2}", item.Id, item.Description, item.Status);
             }
+            Console.WriteLine("\n");
         }
         // Class To Allow a user to choose an item to update or remove by ID - Returns ID#
         public int ChooseItem()
@@ -68,7 +69,8 @@ namespace CheckPoint2_ToDoApp
 
             Console.WriteLine("Would you like to update the Description or the Status?");
             Console.WriteLine("1. Description");
-            Console.WriteLine("2. Status");
+            Console.WriteLine("2. Status\n");
+            Console.Write("Enter: ");
 
             switch (Console.ReadLine())
             {
@@ -94,14 +96,15 @@ namespace CheckPoint2_ToDoApp
             bool validInput = false;
             int userInput = 0;
 
-            Console.WriteLine("Please choose from the following options: ");
+            Console.WriteLine("\nPlease choose from the following options: ");
             Console.WriteLine("1. Add a ToDo Item");
             Console.WriteLine("2. Display List of Items");
             Console.WriteLine("3. Update an Item");
             Console.WriteLine("4. Remove an Item");
             Console.WriteLine("5. Display Pending Items");
             Console.WriteLine("6. Display Done Items");
-            Console.WriteLine("7. To Quit");
+            Console.WriteLine("7. To Quit\n");
+            Console.Write("Enter: ");
 
             validInput = Int32.TryParse(Console.ReadLine(), out userInput);
 

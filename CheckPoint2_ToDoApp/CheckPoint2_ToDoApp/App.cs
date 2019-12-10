@@ -86,7 +86,7 @@ namespace CheckPoint2_ToDoApp
                     case 5:
                         // 5. Display Pending Items
                         List<ToDoItem> pendingItems = repositoryItem.PrintStatus(Flag.Pending);
-                        if (pendingItems != null)
+                        if (pendingItems.Count != 0)
                         {
                             console.PrintItems(pendingItems);
                         }
@@ -96,7 +96,7 @@ namespace CheckPoint2_ToDoApp
                     case 6:
                         // 6. Display Done Items
                         List<ToDoItem> doneItems = repositoryItem.PrintStatus(Flag.Done);
-                        if (doneItems != )
+                        if (doneItems.Count != 0)
                         {
                             console.PrintItems(doneItems);
                         }
