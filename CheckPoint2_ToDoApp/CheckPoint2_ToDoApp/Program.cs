@@ -10,6 +10,8 @@ namespace CheckPoint2_ToDoApp
     {
         static void Main(string[] args)
         {
+            App toDoApp = new App();
+            toDoApp.Start();
         }
     }
 }
