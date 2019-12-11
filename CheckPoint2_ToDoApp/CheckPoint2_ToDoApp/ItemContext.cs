@@ -25,5 +25,73 @@ namespace CheckPoint2_ToDoApp
 
             optionsBuilder.UseSqlite("Data Source=" + DatabaseFile);
         }
+
+        public bool ItemUpdate(ToDoItem choice, string update)
+        {
+            bool success = false;
+            String[] updating = update.Split();
+            string desc = string.Empty;
+            int id = 0;
+
+            if (choice != null)
+            {
+                if (updating.Length == 1)
+                {
+                    bool isNumber = false;
+                    isNumber = Int32.TryParse(updating[0], out id);
+
+                    if (isNumber)
+                    {
+                        if (id == 2)
+                        {
+                            switch (choice.Status)
+                            {
+                                case "Pending":
+                                    choice.Status = "Done";
+                                    this.SaveChanges();
+                                    success = true;
+                                    break;
+                                case "Done":
+                                    choice.Status = "Pending";
+                                    this.SaveChanges();
+                                    success = true;
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            success = false;
+                        }
+                    }
+                    else
+                    {
+                        choice.Description = updating[0];
+                        this.SaveChanges();
+                        success = true;
+                    }
+                }
+                else if (updating.Length > 1)
+                {
+                    using (this)
+                    {
+                        var results = this.Items(item => item.Id == choice.Id);
+                        if (results != null)
+                        {
+                            results.Description = update;
+                            this.SaveChanges();
+                        }
+                    }
+                    //choice.Description = update;
+                    //listContext.SaveChanges();
+                    //success = true;
+                }
+                else
+                    success = false;
+            }
+            else
+                success = false;
+
+            return success;
+        }
     }
 }
